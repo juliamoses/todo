@@ -1,17 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lists</h1>
+<h1>To Do List</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Todos</th>
+      <th>Things I need to do</th>
       <th>Complete</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+<!--     looping through database -->
     <% @lists.each do |list| %>
       <tr>
         <td><%= list.todos %></td>
@@ -26,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New List', new_list_path %>
+<%= link_to 'Another thing I need to do', new_list_path %>
