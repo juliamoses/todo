@@ -2,12 +2,11 @@
 
 <h1>To Do List</h1>
 
-<table class="table table-hover table-bordered">
-
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Things I need to do</th>
-      <th>Complete</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -17,16 +16,18 @@
 
       <% if list.complete %>
         <tr class="table-secondary">
-          <td class="complete">
+          <td class="complete" >
             <%= link_to list.todos, edit_list_path(list) %> <% list.todos %>
           </td>
           <td>
-            <center>
-              <%= link_to 'Show', list, class: "btn btn-primary" %>
-              <%= link_to 'Edit', edit_list_path(list), class: "btn btn-info" %>
-              <%= link_to 'Delete', list, class: "btn btn-danger",
-                method: :delete, data: { confirm: 'Are you sure?' } %>
-            </center>
+            <%= link_to 'Show', list, class: "btn btn-primary" %>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_list_path(list), class: "btn btn-info" %>
+          </td>
+          <td>
+            <%= link_to 'Destroy', list, class: "btn btn-danger", 
+            method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% else %>
@@ -36,12 +37,14 @@
             <%= link_to list.todos, edit_list_path(list) %> <% list.todos %>
           </td>
           <td>
-            <center>
             <%= link_to 'Show', list, class: "btn btn-primary" %>
+          </td>
+          <td>
             <%= link_to 'Edit', edit_list_path(list), class: "btn btn-info" %>
-            <%= link_to 'Delete', list, class: "btn btn-danger",
-              method: :delete, data: { confirm: 'Are you sure?' } %>
-            </center>
+          </td>
+          <td>
+            <%= link_to 'Destroy', list, class: "btn btn-danger", 
+            method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>
