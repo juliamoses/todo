@@ -2,29 +2,54 @@
 
 <h1>To Do List</h1>
 
-<table>
+<table class="table table-hover table-bordered">
+
   <thead>
     <tr>
       <th>Things I need to do</th>
       <th>Complete</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
 <!--     looping through database -->
     <% @lists.each do |list| %>
-      <tr>
-        <td><%= list.todos %></td>
-        <td><%= list.complete %></td>
-        <td><%= link_to 'Show', list %></td>
-        <td><%= link_to 'Edit', edit_list_path(list) %></td>
-        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+      <% if list.complete %>
+        <tr class="table-secondary">
+          <td class="complete">
+            <%= link_to list.todos, edit_list_path(list) %> <% list.todos %>
+          </td>
+          <td>
+            <center>
+              <%= link_to 'Show', list, class: "btn btn-primary" %>
+              <%= link_to 'Edit', edit_list_path(list), class: "btn btn-info" %>
+              <%= link_to 'Delete', list, class: "btn btn-danger",
+                method: :delete, data: { confirm: 'Are you sure?' } %>
+            </center>
+          </td>
+        </tr>
+      <% else %>
+
+        <tr >
+          <td>
+            <%= link_to list.todos, edit_list_path(list) %> <% list.todos %>
+          </td>
+          <td>
+            <center>
+            <%= link_to 'Show', list, class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_list_path(list), class: "btn btn-info" %>
+            <%= link_to 'Delete', list, class: "btn btn-danger",
+              method: :delete, data: { confirm: 'Are you sure?' } %>
+            </center>
+          </td>
+        </tr>
+      <% end %>
+
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'Another thing I need to do', new_list_path %>
+<%= link_to 'Another thing I need to do', new_list_path, class: "btn btn-light btn-lg" %>
