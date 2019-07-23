@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#rails g scaffold list todos:string completed:boolean
+
+List.create!(todos: 'Go to the park')
+List.create!(todos: 'Finish a chapter of my book')
+List.create!(todos: 'Eat breakfast')
