@@ -56,3 +56,12 @@
 <br>
 
 <%= link_to 'New Todo', new_list_path, class: "btn btn-success btn-lg" %>
+
+<%= link_to 'Delete Complete Todos', delete_delete_todo_path,data: { confirm: 'Are you sure?' }, class: "btn btn-warning btn-lg" %>
+
+<%= link_to 'Delete All Todos', delete_delete_all_path,data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-lg" %>
+
+
+
+
+
