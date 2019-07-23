@@ -1,5 +1,5 @@
 </br>
-<!-- take in name and message of notice -->
+<!-- take in name and message of notice, loop through, show bootstrap alert -->
 <% flash.each do |name, msg| %>
 	<div class="alert alert-success alert-dismissible fade show" role="alert">
 	  <%= content_tag(:div, msg) %>
