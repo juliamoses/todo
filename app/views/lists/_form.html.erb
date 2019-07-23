@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :todos %>
-    <%= form.text_field :todos %>
+    <%= form.label :description, class: "font-weight-bold" %>
+    <%= form.text_field :todos, class: "form-control", type: "text", placeholder: "What do you need to do?"  %>
   </div>
 
   <div class="field">
-    <%= form.label :complete %>
+    <%= form.label :complete, class: "font-weight-bold" %>
     <%= form.check_box :complete %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Update Item", class: "btn btn-primary" %>
   </div>
 <% end %>
