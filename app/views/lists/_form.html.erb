@@ -1,27 +1,34 @@
 <%= form_with(model: list, local: true) do |form| %>
-  <% if list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
-
-      <ul>
-      <% list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<% if list.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
+  <ul>
+    <% list.errors.full_messages.each do |message| %>
+    <li>
+      <%= message %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="card text-center">
+  <div class="card-header">
+    What will you do today?
+  </div>
+  <div class="card-body">
+    <div class="field">
+      <%= form.label :description, class: "font-weight-bold" %>
+      <%= form.text_field :todos, class: "form-control", type: "text", placeholder: "What do you need to do?"  %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :description, class: "font-weight-bold" %>
-    <%= form.text_field :todos, class: "form-control", type: "text", placeholder: "What do you need to do?"  %>
+    <div class="field">
+      <%= form.label :complete, class: "font-weight-bold" %>
+      <%= form.check_box :complete %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Update Item", class: "btn btn-primary" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :complete, class: "font-weight-bold" %>
-    <%= form.check_box :complete %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Update Item", class: "btn btn-primary" %>
-  </div>
+</div>
+</br>
 <% end %>
