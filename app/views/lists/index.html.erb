@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<!-- flash message for created/updated list -->
+<%= render 'flash' %>
 
 <h1>To Do List</h1>
 
@@ -26,7 +27,7 @@
             <%= link_to 'Edit', edit_list_path(list), class: "btn btn-info" %>
           </td>
           <td>
-            <%= link_to 'Destroy', list, class: "btn btn-danger", 
+            <%= link_to 'Delete', list, class: "btn btn-danger", 
             method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
@@ -43,7 +44,7 @@
             <%= link_to 'Edit', edit_list_path(list), class: "btn btn-info" %>
           </td>
           <td>
-            <%= link_to 'Destroy', list, class: "btn btn-danger", 
+            <%= link_to 'Delete', list, class: "btn btn-danger", 
             method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
