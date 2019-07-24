@@ -29,7 +29,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to lists_url, notice: 'List was successfully created.' }
+        format.html { redirect_to lists_url, notice: 'To Do was successfully created.' }
         format.json { render :show, status: :created, location: @list }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ListsController < ApplicationController
     respond_to do |format|
       if @list.update(list_params)
         # changed redirection from @list (show page) to list page
-        format.html { redirect_to lists_url, notice: 'List was successfully updated.' }
+        format.html { redirect_to lists_url, notice: 'To Do was successfully updated.' }
         format.json { render :show, status: :ok, location: @list }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class ListsController < ApplicationController
   def destroy
     @list.destroy
     respond_to do |format|
-      format.html { redirect_to lists_url, notice: 'List was successfully deleted.' }
+      format.html { redirect_to lists_url, notice: 'To Do was successfully deleted.' }
       format.json { head :no_content }
     end
   end
