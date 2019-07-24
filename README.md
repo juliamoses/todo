@@ -1,4 +1,4 @@
-# README
+# TODO List
 
 ### a simple To-Do tracking app built with Ruby on Rails and Bootstrap
 
