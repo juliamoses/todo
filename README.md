@@ -1,7 +1,8 @@
 # TODO List
 
-### a simple To-Do tracking app built with Ruby on Rails and Bootstrap
+### A simple To-Do tracking app built with Ruby on Rails and Bootstrap
 
+##### You can find it here:
 #### https://mytodolist11.herokuapp.com
 
 ### Dependencies
